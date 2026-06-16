@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Quiz - Click Metrics</title>
+<link rel="icon" href="/logo-s1-300x69.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MW5NK72N');</script>
+<!-- End Google Tag Manager -->
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  height: 2.5rem;
+}
+
+.header-phone {
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.header-phone:hover {
+  color: #000000;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(to right, #eff6ff, #ecfeff);
+  border-left: 4px solid #2563eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.banner h1 {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (max-width: 640px) {
+  .banner h1 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+}
+
+/* Progress */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.progress-track {
+  background: #e5e7eb;
+  height: 0.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-fill {
+  background: #000000;
+  height: 100%;
+  border-radius: 9999px;
+  width: 0%;
+  transition: width 500ms ease-out;
+}
+
+/* Quiz */
+.quiz-container {
+  display: block;
+}
+
+.quiz-question-number {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-question-text {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  color: #111827;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.quiz-option:hover {
+  border-color: #000000;
+  background: #f9fafb;
+}
+
+.quiz-option.selected {
+  border-color: #000000;
+  background: #f3f4f6;
+}
+
+/* Contact form */
+.contact-container {
+  display: none;
+}
+
+.contact-heading {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  border-color: #000000;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: #1f2937;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.submit-btn.loading .spinner {
+  display: block;
+}
+
+/* Error */
+.form-error {
+  display: none;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #991b1b;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.form-error.visible {
+  display: block;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: #111827;
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW5NK72N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/"><img src="image copy.png" alt="Click Metrics" class="header-logo"></a>
+    <a href="tel:07738530261" class="header-phone">077385 30261</a>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="main">
+  <!-- Banner -->
+  <div class="banner">
+    <h1>What Does Professional Google Ads Management Look Like?</h1>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-info">
+    <span id="progress-label">Question 1 of 7</span>
+    <span id="progress-pct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-container" id="quiz-container">
+    <div class="quiz-question-number" id="quiz-number">Question 1</div>
+    <div class="quiz-question-text" id="quiz-text"></div>
+    <div class="quiz-options" id="quiz-options"></div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-container" id="contact-container">
+    <h2 class="contact-heading">Let's connect to discuss your Google Ads management</h2>
+    <div class="form-error" id="form-error">Something went wrong. Please try again.</div>
+    <form id="contact-form" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="first_name">First Name</label>
+        <input class="form-input" type="text" id="first_name" name="first_name" required placeholder="John">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" required placeholder="john@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input class="form-input" type="tel" id="phone" name="phone" required placeholder="+44 7700 000000">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="website">Website</label>
+        <input class="form-input" type="url" id="website" name="website" required placeholder="https://www.example.com">
+      </div>
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <span id="submit-text">Submit</span>
+        <span class="spinner" id="submit-spinner"></span>
+      </button>
+    </form>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="footer-text">&copy; 2026 Click Metrics Ltd. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+    <a href="terms-conditions.html" class="footer-link">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // Questions
+  var questions = [
+    {
+      id: 'q1_ads_handling',
+      question: 'How is your Google Ads currently handled?',
+      options: [
+        'Managed internally',
+        'Managed by an agency or freelancer',
+        'Previously managed, currently paused',
+        'Not running Google Ads right now'
+      ]
+    },
+    {
+      id: 'q2_campaign_structure',
+      question: 'What best describes how your campaigns are structured?',
+      options: [
+        'Clearly structured by intent and profitability',
+        'Some structure, but mostly broad',
+        'Mostly automated / smart campaigns',
+        'I honestly don\'t know'
+      ]
+    },
+    {
+      id: 'q3_biggest_frustration',
+      question: 'What\'s your biggest frustration with Google Ads right now?',
+      options: [
+        'Wasted spend with little accountability',
+        'Leads coming in but not high quality',
+        'No clear visibility into what\'s working',
+        'Inconsistent results month to month',
+        'Not currently running ads'
+      ]
+    },
+    {
+      id: 'q4_manager_involvement',
+      question: 'How involved is your current Google Ads manager?',
+      options: [
+        'Proactive with strategy and recommendations',
+        'Mostly reactive / reporting only',
+        'Barely hear from them',
+        'No manager'
+      ]
+    },
+    {
+      id: 'q5_impact_of_proper_management',
+      question: 'If your Google Ads were managed properly, what would that change?',
+      options: [
+        'Marginal improvement, nothing major',
+        'More predictable lead flow',
+        'Confidence to increase ad spend',
+        'Ability to scale the business'
+      ]
+    },
+    {
+      id: 'q6_monthly_ad_spend',
+      question: 'What is your monthly Google Ads spend?',
+      options: [
+        'Less than £1,000 PM',
+        '£1,000 - £2,000 PM',
+        '£2,000 - £5,000 PM',
+        '£5,000 - £10,000 PM',
+        '£10,000+ PM'
+      ]
+    }
+  ];
+
+  var totalSteps = 7; // 6 questions + 1 contact form
+  var currentQuestion = 0;
+  var answers = {};
+
+  // DOM refs
+  var quizContainer = document.getElementById('quiz-container');
+  var contactContainer = document.getElementById('contact-container');
+  var progressLabel = document.getElementById('progress-label');
+  var progressPct = document.getElementById('progress-pct');
+  var progressFill = document.getElementById('progress-fill');
+  var quizNumber = document.getElementById('quiz-number');
+  var quizText = document.getElementById('quiz-text');
+  var quizOptions = document.getElementById('quiz-options');
+  var contactForm = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('submit-btn');
+  var submitText = document.getElementById('submit-text');
+  var submitSpinner = document.getElementById('submit-spinner');
+  var formError = document.getElementById('form-error');
+
+  // DataLayer: quiz started
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'quiz_started',
+    quiz_name: 'google_ads_qualification'
+  });
+
+  function updateProgress(step) {
+    var pct = Math.round((step / totalSteps) * 100);
+    progressLabel.textContent = 'Question ' + (step + 1) + ' of ' + totalSteps;
+    progressPct.textContent = pct + '%';
+    progressFill.style.width = pct + '%';
+  }
+
+  function renderQuestion(index) {
+    var q = questions[index];
+    quizNumber.textContent = 'Question ' + (index + 1);
+    quizText.textContent = q.question;
+    quizOptions.innerHTML = '';
+
+    q.options.forEach(function(opt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quiz-option';
+      btn.textContent = opt;
+      btn.addEventListener('click', function() {
+        selectOption(btn, q.id, opt, index);
+      });
+      quizOptions.appendChild(btn);
+    });
+
+    updateProgress(index);
+  }
+
+  function selectOption(btn, questionId, answer, index) {
+    // Visual feedback
+    var allBtns = quizOptions.querySelectorAll('.quiz-option');
+    for (var i = 0; i < allBtns.length; i++) {
+      allBtns[i].classList.remove('selected');
+      allBtns[i].style.pointerEvents = 'none';
+    }
+    btn.classList.add('selected');
+
+    // Record answer
+    answers[questionId] = answer;
+
+    // DataLayer: question answered
+    window.dataLayer.push({
+      event: 'quiz_question_answered',
+      question_number: index + 1,
+      question_id: questionId,
+      answer: answer
+    });
+
+    // Advance after delay
+    setTimeout(function() {
+      if (index < questions.length - 1) {
+        currentQuestion = index + 1;
+        renderQuestion(currentQuestion);
+      } else {
+        showContact();
+      }
+    }, 300);
+  }
+
+  function showContact() {
+    quizContainer.style.display = 'none';
+    contactContainer.style.display = 'block';
+    // Progress: step 6 (0-indexed) = question 7 of 7, 95%
+    progressLabel.textContent = 'Question 7 of 7';
+    progressPct.textContent = '95%';
+    progressFill.style.width = '95%';
+  }
+
+  // Form submit
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    formError.classList.remove('visible');
+
+    var firstName = document.getElementById('first_name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var website = document.getElementById('website').value.trim();
+
+    // Validate
+    if (!firstName || !email || !phone || !website) {
+      formError.textContent = 'Please fill in all fields.';
+      formError.classList.add('visible');
+      return;
+    }
+
+    // Loading state
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitText.textContent = 'Submitting...';
+    submitSpinner.style.display = 'block';
+
+    var payload = {
+      first_name: firstName,
+      email: email,
+      phone: phone,
+      website: website,
+      q1_ads_handling: answers.q1_ads_handling || '',
+      q2_campaign_structure: answers.q2_campaign_structure || '',
+      q3_biggest_frustration: answers.q3_biggest_frustration || '',
+      q4_manager_involvement: answers.q4_manager_involvement || '',
+      q5_impact_of_proper_management: answers.q5_impact_of_proper_management || '',
+      q6_monthly_ad_spend: answers.q6_monthly_ad_spend || ''
+    };
+
+    // 1. Fire-and-forget to n8n webhook
+    try {
+      fetch('https://n8n.srv1126577.hstgr.cloud/webhook/7cfa0f75-8955-4520-a6cb-db1d1013f556', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (e) {
+      // fire-and-forget, ignore errors
+    }
+
+    // 2. POST to Supabase
+    var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2pmYWlmZm9mc3ptdnl6cXdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk2OTA2MTMsImV4cCI6MjA2NTI2NjYxM30.3Ia8QrtjFzF-IcjWVFSKVL7kcLH_hUf4TqZ7v4rkVZE';
+
+    fetch('https://bkgjfaiffofszmvyzqwp.supabase.co/rest/v1/quiz_leads', {
+      method: 'POST',
+      headers: {
+        'apikey': supabaseKey,
+        'Authorization': 'Bearer ' + supabaseKey,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('Supabase error: ' + res.status);
+
+      // 3. DataLayer: quiz completed
+      window.dataLayer.push({
+        event: 'quiz_completed',
+        submission_data: payload
+      });
+
+      // 4. Redirect
+      window.location.href = 'thank-you-fb.html';
+    })
+    .catch(function(err) {
+      // Still try to redirect on Supabase failure since n8n was fire-and-forget
+      window.dataLayer.push({
+        event: 'quiz_completed',
+        submission_data: payload
+      });
+      window.location.href = 'thank-you-fb.html';
+    });
+  });
+
+  // Init
+  renderQuestion(0);
+})();
+</script>
+</body>
+</html>

@@ -1,38 +1,1390 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MW5NK72N');</script>
-    <!-- End Google Tag Manager -->
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Google Ads Conversion Landing Page</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
-    <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/54ltlxwu8q.js" async type="module"></script>
-    <style>
-      wistia-player[media-id='54ltlxwu8q']:not(:defined) {
-        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/54ltlxwu8q/swatch');
-        display: block;
-        filter: blur(5px);
-        padding-top: 56.25%;
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MW5NK72N');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Ads Conversion Landing Page</title>
+  <link rel="icon" type="image/png" href="/logo-s1-300x69.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/54ltlxwu8q.js" async type="module"></script>
+  <style>
+    wistia-player[media-id='54ltlxwu8q']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/54ltlxwu8q/swatch');
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+    }
+  </style>
+  <style>
+    /* ===== CSS Custom Properties ===== */
+    :root {
+      --jet-950: #0a0a0a;
+      --jet-900: #121212;
+      --jet-800: #1a1a1a;
+      --jet-700: #242424;
+      --graphite-600: #404040;
+      --graphite-500: #525252;
+      --graphite-400: #6b6b6b;
+      --silver-400: #a3a3a3;
+      --silver-300: #b8b8b8;
+      --silver-200: #d4d4d4;
+      --silver-100: #e8e8e8;
+      --yellow-500: #eab308;
+      --yellow-400: #facc15;
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--jet-950);
+      color: var(--silver-200);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Utility Classes ===== */
+    .container-lg {
+      max-width: 80rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .container-md {
+      max-width: 56rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .container-sm {
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .container-form {
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .text-center { text-align: center; }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--silver-100);
+      color: var(--jet-950);
+      padding: 1rem 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .cta-button:hover {
+      background-color: var(--silver-200);
+    }
+
+    .section-heading {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--silver-100);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .body-text {
+      color: var(--silver-200);
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+
+    .border-y {
+      border-top: 1px solid var(--graphite-600);
+      border-bottom: 1px solid var(--graphite-600);
+    }
+
+    .border-t {
+      border-top: 1px solid var(--graphite-600);
+    }
+
+    @media (min-width: 640px) {
+      .container-lg,
+      .container-md,
+      .container-sm,
+      .container-form {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
-    </style>
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW5NK72N"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+      .section-heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container-lg,
+      .container-md,
+      .container-sm,
+      .container-form {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      background-color: var(--jet-950);
+      border-bottom: 1px solid var(--graphite-600);
+      padding: 1.5rem 1rem;
+    }
+
+    .site-header .header-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+
+    .site-header .logo {
+      height: 2.5rem;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    @media (min-width: 640px) {
+      .site-header {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .site-header .logo {
+        height: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .site-header {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background-color: var(--jet-950);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--silver-100);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--silver-300);
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+
+    .hero .checklist-intro {
+      color: var(--silver-200);
+      font-weight: 500;
+      margin-top: 2rem;
+    }
+
+    .hero .checklist {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: var(--silver-200);
+    }
+
+    .hero .checklist li .bullet {
+      color: var(--silver-400);
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+
+    .hero .cta-wrapper {
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    .hero-video-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      background-color: var(--jet-900);
+      border: 1px solid var(--graphite-600);
+      overflow: hidden;
+    }
+
+    .video-container wistia-player {
+      display: block;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .hero-grid {
+        grid-template-columns: 3fr 1.25fr;
+        gap: 4rem;
+      }
+      .hero h1 {
+        font-size: 3.75rem;
+      }
+      .hero-video-col {
+        position: sticky;
+        top: 2rem;
+      }
+    }
+
+    /* ===== Content Sections ===== */
+    .section-dark {
+      background-color: var(--jet-950);
+      padding: 5rem 1rem;
+    }
+
+    .section-alt {
+      background-color: var(--jet-900);
+      padding: 5rem 1rem;
+    }
+
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .section-paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .section-cta {
+      text-align: center;
+      padding-top: 2rem;
+    }
+
+    .small-note {
+      color: var(--silver-400);
+      font-size: 0.875rem;
+      letter-spacing: -0.01em;
+    }
+
+    @media (min-width: 640px) {
+      .section-dark,
+      .section-alt {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-dark,
+      .section-alt {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* ===== Application Form ===== */
+    .form-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-header .intro-text {
+      color: var(--silver-300);
+      line-height: 1.5;
+    }
+
+    .form-header .intro-text-xl {
+      color: var(--silver-300);
+      line-height: 1.5;
+      font-size: 1.25rem;
+    }
+
+    .progress-bar-wrapper {
+      margin-top: 2rem;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-label {
+      color: var(--silver-200);
+      font-weight: 500;
+    }
+
+    .progress-percent {
+      color: var(--silver-400);
+      font-size: 0.875rem;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 0.5rem;
+      background-color: var(--jet-950);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--yellow-500);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      color: var(--silver-200);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background-color: var(--jet-950);
+      border: 1px solid var(--graphite-600);
+      color: var(--silver-100);
+      padding: 0.75rem 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--silver-400);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--graphite-400);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b6b' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-group textarea {
+      resize: none;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-back {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--jet-950);
+      border: 1px solid var(--graphite-600);
+      color: var(--silver-100);
+      padding: 1rem 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+      border-color: var(--silver-400);
+    }
+
+    .btn-back:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-next {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--yellow-500);
+      color: var(--jet-950);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-next:hover {
+      background-color: var(--yellow-400);
+    }
+
+    .btn-next:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-note {
+      color: var(--silver-400);
+      font-size: 0.875rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .form-error {
+      background-color: var(--jet-950);
+      border: 1px solid #7f1d1d;
+      color: #f87171;
+      padding: 0.75rem 1rem;
+    }
+
+    /* Success State */
+    .success-state {
+      text-align: center;
+      padding: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .success-icon {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 4px solid var(--silver-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-icon svg {
+      width: 3rem;
+      height: 3rem;
+      color: var(--silver-100);
+    }
+
+    .success-state h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--silver-100);
+      letter-spacing: -0.02em;
+    }
+
+    .success-state .success-msg {
+      font-size: 1.25rem;
+      color: var(--silver-300);
+      line-height: 1.5;
+      max-width: 36rem;
+    }
+
+    .success-state .success-note {
+      color: var(--silver-400);
+      font-size: 1.125rem;
+    }
+
+    @media (min-width: 640px) {
+      .success-state h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* Spinner animation */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid var(--jet-950);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    /* ===== FAQ Section ===== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--graphite-600);
+      background-color: var(--jet-900);
+    }
+
+    .faq-button {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-family: inherit;
+    }
+
+    .faq-button:hover {
+      background-color: var(--jet-800);
+    }
+
+    .faq-button .faq-question {
+      font-weight: 600;
+      color: var(--silver-100);
+      font-size: 1.125rem;
+    }
+
+    .faq-button .faq-chevron {
+      color: var(--silver-400);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-button .faq-chevron.open {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--silver-200);
+      line-height: 1.5;
+      display: none;
+    }
+
+    .faq-answer.open {
+      display: block;
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background-color: var(--jet-900);
+      border-top: 1px solid var(--graphite-600);
+      padding: 3rem 1rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-col h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--silver-100);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: var(--silver-400);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .footer-col a {
+      display: block;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--silver-100);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--graphite-600);
+      text-align: center;
+      color: var(--silver-400);
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 640px) {
+      .site-footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .site-footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* ===== Hidden Steps ===== */
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW5NK72N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="/logo-s1-300x69.png" alt="Click Metrics" class="logo" />
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div>
+          <h1>Your Google Ads are bleeding money. You just don&rsquo;t see where.</h1>
+          <p class="subtitle">For business owners spending &pound;1,000+ monthly who know their campaigns should perform better but can&rsquo;t get clarity or accountability from their current setup.</p>
+
+          <p class="checklist-intro">In the 15 minute strategy review, you&rsquo;ll leave with:</p>
+          <ul class="checklist">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>A clear breakdown of where spend is being wasted</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>What to pause, fix, or double down on immediately</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Whether your account can realistically be profitable &mdash; or not</span>
+            </li>
+          </ul>
+
+          <div class="cta-wrapper">
+            <a href="#apply" class="cta-button">Apply Now</a>
+          </div>
+        </div>
+
+        <div class="hero-video-col">
+          <div class="video-container">
+            <wistia-player media-id="54ltlxwu8q" seo="false" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="text-center">
+            <a href="#apply" class="cta-button">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Disqualification Section ===== -->
+  <section class="section-alt border-y">
+    <div class="container-md">
+      <div class="text-center" style="display:flex;flex-direction:column;gap:2rem;">
+        <h2 class="section-heading">This is not for everyone</h2>
+
+        <div class="section-paragraphs">
+          <p class="body-text">If you&rsquo;re spending under &pound;1,000 per month on Google Ads, this is not a fit.</p>
+          <p class="body-text">If you&rsquo;re looking for the cheapest management option, this isn&rsquo;t it.</p>
+          <p class="body-text">This is for business owners who are already investing significantly in Google Ads and know the potential is there, but need someone who will take accountability for results rather than just run reports.</p>
+        </div>
+
+        <div>
+          <p class="small-note">Retainer starts at &pound;500+ per month. No long-term contracts.</p>
+        </div>
+
+        <div style="padding-top:1rem;">
+          <a href="#apply" class="cta-button">Request a strategy review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Problem Section ===== -->
+  <section class="section-dark">
+    <div class="container-md">
+      <div class="section-content">
+        <h2 class="section-heading">Why most Google Ads accounts underperform</h2>
+
+        <div class="section-paragraphs">
+          <p class="body-text">Most business owners are told their Google Ads are &ldquo;optimized&rdquo; while campaigns quietly waste budget on clicks that never convert.</p>
+          <p class="body-text">Smart campaigns sound intelligent but hand control to an algorithm that doesn&rsquo;t understand your business or your customers.</p>
+          <p class="body-text">Agencies deliver monthly reports full of metrics that look impressive but don&rsquo;t answer the one question that matters: are we making money or losing it?</p>
+          <p class="body-text">The problem is not the platform. The problem is the lack of brutal honesty about what&rsquo;s working and what needs to be killed.</p>
+        </div>
+
+        <div class="section-cta">
+          <a href="#apply" class="cta-button">Request a strategy review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Mechanism Section ===== -->
+  <section class="section-alt border-y">
+    <div class="container-md">
+      <div class="section-content">
+        <h2 class="section-heading">A different approach</h2>
+
+        <div class="section-paragraphs">
+          <p class="body-text">We start by auditing what&rsquo;s actually happening in your account. Not what the dashboard says. What&rsquo;s really driving cost and what&rsquo;s driving revenue.</p>
+          <p class="body-text">Then we build structure around decision-making. Every pound spent has a clear purpose. Every campaign has a hypothesis. Every week has a review where we kill what doesn&rsquo;t work.</p>
+          <p class="body-text">No long-term contracts. No hiding behind vanity metrics. Clear accountability from day one.</p>
+          <p class="body-text">This is not about adding more campaigns or more keywords. This is about identifying what&rsquo;s broken, fixing it, and then systematically improving what&rsquo;s left.</p>
+        </div>
+
+        <div class="section-cta">
+          <a href="#apply" class="cta-button">Request a strategy review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Application Form Section ===== -->
+  <section id="apply" class="section-alt border-y">
+    <div class="container-form">
+      <div id="form-container">
+        <div class="form-header">
+          <p class="intro-text">This is a short, practical review focused on identifying wasted spend and immediate next actions &mdash; not a sales pitch.</p>
+          <h2 class="section-heading">Apply for a strategy review - No Obligation</h2>
+          <p class="intro-text-xl">We only work with businesses that meet our criteria. Complete this application to see if we&rsquo;re a fit.</p>
+        </div>
+
+        <div class="progress-bar-wrapper">
+          <div class="progress-info">
+            <span class="progress-label" id="progress-step">Step 1 of 3</span>
+            <span class="progress-percent" id="progress-pct">33% complete</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill" style="width: 33%"></div>
+          </div>
+        </div>
+
+        <form id="lead-form" novalidate>
+          <!-- Step 1 -->
+          <div class="form-step active" data-step="1">
+            <div class="form-fields">
+              <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required placeholder="john@acme.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone" required placeholder="+44 7700 000000" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="form-step" data-step="2">
+            <div class="form-fields">
+              <div class="form-group">
+                <label for="website">Website address</label>
+                <input type="text" id="website" name="website" required placeholder="https://www.example.com" />
+              </div>
+              <div class="form-group">
+                <label for="monthly_ad_spend">Monthly Google Ads spend</label>
+                <select id="monthly_ad_spend" name="monthly_ad_spend" required>
+                  <option value="">Select your monthly spend</option>
+                  <option value="Less than £1,000">Less than &pound;1,000</option>
+                  <option value="£1,000 - £2,500">&pound;1,000 - &pound;2,500</option>
+                  <option value="£2,500 - £5,000">&pound;2,500 - &pound;5,000</option>
+                  <option value="£5,000 - £10,000">&pound;5,000 - &pound;10,000</option>
+                  <option value="£10,000+">&pound;10,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="biggest_frustration">Biggest frustration with Google Ads</label>
+                <select id="biggest_frustration" name="biggest_frustration" required>
+                  <option value="">Select your main frustration</option>
+                  <option value="Poor quality leads">Poor quality leads</option>
+                  <option value="Wasted spend with no results">Wasted spend with no results</option>
+                  <option value="No clarity on what's working">No clarity on what's working</option>
+                  <option value="Agency lacks accountability">Agency lacks accountability</option>
+                  <option value="Results not improving over time">Results not improving over time</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="form-step" data-step="3">
+            <div class="form-fields">
+              <div class="form-group">
+                <label for="ready_to_invest">Ready to invest in professional management?</label>
+                <select id="ready_to_invest" name="ready_to_invest" required>
+                  <option value="">Select an option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any additional information you'd like to share..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="form-error" class="form-error" style="display:none;margin-top:1.5rem;"></div>
+
+          <div class="form-buttons">
+            <button type="button" id="btn-back" class="btn-back" disabled>
+              <span>&larr;</span> Back
+            </button>
+            <button type="submit" id="btn-next" class="btn-next" disabled>
+              Next <span>&rarr;</span>
+            </button>
+          </div>
+
+          <p id="form-final-note" class="form-note" style="display:none;">
+            We'll review your application and respond within 48 hours.
+          </p>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="form-success" style="display:none;">
+        <div class="progress-bar-wrapper">
+          <div class="progress-info">
+            <span class="progress-label">Complete</span>
+            <span class="progress-percent">100% complete</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:100%"></div>
+          </div>
+        </div>
+
+        <div class="success-state">
+          <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h2>Application received</h2>
+          <p class="success-msg">We'll review your details and get back to you within 48 hours to discuss if this is a fit.</p>
+          <p class="success-note">Check your inbox for confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ Section ===== -->
+  <section class="section-dark">
+    <div class="container-sm">
+      <h2 class="section-heading text-center">Common questions</h2>
+
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">How much do you charge?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">Retainer starts at &pound;500 per month for accounts spending &pound;1,000-&pound;2,500 monthly. Pricing scales with ad spend and complexity. No long-term contracts. No setup fees. You can leave with 30 days notice if we're not delivering.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">Who is this for?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">Business owners and directors already spending &pound;1,000+ per month on Google Ads who are frustrated with poor results, wasted budget, or lack of accountability. This is not for startups testing the waters or businesses looking for the cheapest option.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">What happens after I submit?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">We review your application within 48 hours. If it looks like a fit, we'll schedule a 30-minute call to audit your current setup and discuss whether we can help. No pressure. No hard sell. If we don't think we can improve your results, we'll tell you.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">How long until I see results?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">Most clients see measurable improvements within 30-60 days. We focus on quick wins first &mdash; pausing waste, fixing obvious errors, improving targeting. Longer-term optimization (testing, scaling, new campaigns) builds from there. If your account is fundamentally broken, we'll tell you upfront what's realistic.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">Do I keep control of my Google Ads account?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">Yes. You own the account, we manage it. You have full access at all times. We work inside your existing account &mdash; you're never locked in or dependent on us. If you leave, everything stays with you. No agency-owned accounts, no proprietary dashboards you lose access to.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">What if my budget is outside your range?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">If you're spending under &pound;1,000/month, Google Ads may not be viable yet &mdash; the platform needs volume to learn and optimize. If you're spending &pound;10,000+/month, we can absolutely help, and pricing adjusts based on account complexity and the level of support required.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">How do I know if Google Ads will work for my business?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">That's what the strategy review is for. We'll look at your current data, your market, your offer, and your margins &mdash; and tell you honestly whether Google Ads makes sense. If your product has no search demand, terrible margins, or unrealistic expectations, we'll tell you. We only take on clients we believe we can help.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false">
+            <span class="faq-question">What makes you different from other agencies?</span>
+            <span class="faq-chevron">&#9660;</span>
+          </button>
+          <div class="faq-answer">No BS. No long-term contracts. No inflated promises. We don't take on clients we can't help. We give you direct access to the person managing your account &mdash; no account managers, no junior staff. You get clear reporting, honest feedback, and accountability. If we're not delivering, you can leave. Most agencies won't offer that.</div>
+        </div>
+      </div>
+
+      <div class="section-cta" style="padding-top:3rem;">
+        <a href="#apply" class="cta-button">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Final CTA Section ===== -->
+  <section class="section-alt border-t">
+    <div class="container-md">
+      <div class="text-center" style="display:flex;flex-direction:column;gap:2rem;">
+        <h2 class="section-heading">Stop wasting money on campaigns that don&rsquo;t convert</h2>
+
+        <div class="section-paragraphs">
+          <p class="body-text">This is for business owners spending &pound;1,000+ monthly who need accountability, not reports.</p>
+          <p class="body-text">This is not for businesses looking for cheap management or quick fixes.</p>
+        </div>
+
+        <div>
+          <a href="#apply" class="cta-button">See if this is a fit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container-lg">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Click Metrics Ltd</h3>
+          <p>Transparent, performance-based Google Ads management for businesses spending &pound;1,000+ per month.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <div class="footer-contact">
+            <p>Phone: 077385 30261</p>
+            <p>Email: michael@clickmetrics.uk</p>
+            <p><a href="https://www.clickmetrics.uk" target="_blank" rel="noopener noreferrer">www.clickmetrics.uk</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <div class="footer-links">
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms-conditions.html">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Click Metrics Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    (function() {
+      'use strict';
+
+      /* ===== Multi-step Form ===== */
+      var currentStep = 1;
+      var totalSteps = 3;
+      var form = document.getElementById('lead-form');
+      var formContainer = document.getElementById('form-container');
+      var formSuccess = document.getElementById('form-success');
+      var btnBack = document.getElementById('btn-back');
+      var btnNext = document.getElementById('btn-next');
+      var progressStep = document.getElementById('progress-step');
+      var progressPct = document.getElementById('progress-pct');
+      var progressFill = document.getElementById('progress-fill');
+      var formError = document.getElementById('form-error');
+      var formFinalNote = document.getElementById('form-final-note');
+
+      var SUPABASE_URL = 'https://bkgjfaiffofszmvyzqwp.supabase.co';
+      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2pmYWlmZm9mc3ptdnl6cXdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk2OTA2MTMsImV4cCI6MjA2NTI2NjYxM30.3Ia8QrtjFzF-IcjWVFSKVL7kcLH_hUf4TqZ7v4rkVZE';
+      var WEBHOOK_URL = 'https://n8n.srv1126577.hstgr.cloud/webhook/7cfa0f75-8955-4520-a6cb-db1d1013f556';
+
+      function getFormData() {
+        return {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          website: document.getElementById('website').value.trim(),
+          monthly_ad_spend: document.getElementById('monthly_ad_spend').value,
+          biggest_frustration: document.getElementById('biggest_frustration').value,
+          ready_to_invest: document.getElementById('ready_to_invest').value,
+          message: document.getElementById('message').value.trim()
+        };
+      }
+
+      function canProceed() {
+        if (currentStep === 1) {
+          var name = document.getElementById('name').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var phone = document.getElementById('phone').value.trim();
+          return name !== '' && email !== '' && phone !== '';
+        }
+        if (currentStep === 2) {
+          var website = document.getElementById('website').value.trim();
+          var spend = document.getElementById('monthly_ad_spend').value;
+          var frustration = document.getElementById('biggest_frustration').value;
+          return website !== '' && spend !== '' && frustration !== '';
+        }
+        if (currentStep === 3) {
+          var invest = document.getElementById('ready_to_invest').value;
+          return invest !== '';
+        }
+        return false;
+      }
+
+      function updateUI() {
+        /* Show/hide steps */
+        var steps = document.querySelectorAll('.form-step');
+        for (var i = 0; i < steps.length; i++) {
+          var stepNum = parseInt(steps[i].getAttribute('data-step'), 10);
+          if (stepNum === currentStep) {
+            steps[i].classList.add('active');
+          } else {
+            steps[i].classList.remove('active');
+          }
+        }
+
+        /* Progress bar */
+        var pct = currentStep === totalSteps ? 95 : Math.round((currentStep / totalSteps) * 100);
+        progressStep.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+        progressPct.textContent = pct + '% complete';
+        progressFill.style.width = pct + '%';
+
+        /* Back button */
+        btnBack.disabled = currentStep <= 1;
+
+        /* Next / Submit button */
+        var canGo = canProceed();
+        btnNext.disabled = !canGo;
+
+        if (currentStep === totalSteps) {
+          btnNext.innerHTML = 'Submit application';
+          formFinalNote.style.display = 'block';
+        } else {
+          btnNext.innerHTML = 'Next <span>&rarr;</span>';
+          formFinalNote.style.display = 'none';
+        }
+
+        /* Hide error */
+        formError.style.display = 'none';
+      }
+
+      function showStep(step) {
+        currentStep = step;
+        updateUI();
+        var applySection = document.getElementById('apply');
+        if (applySection) {
+          applySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      /* Listen for input changes to enable/disable button */
+      form.addEventListener('input', function() {
+        btnNext.disabled = !canProceed();
+      });
+
+      form.addEventListener('change', function() {
+        btnNext.disabled = !canProceed();
+      });
+
+      btnBack.addEventListener('click', function() {
+        if (currentStep > 1) {
+          showStep(currentStep - 1);
+        }
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (currentStep < totalSteps) {
+          /* Advance to next step */
+          var nextStep = currentStep + 1;
+
+          /* Push dataLayer event */
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'form_step_completed',
+              form_name: 'lead_application',
+              step_number: currentStep,
+              next_step: nextStep
+            });
+          }
+
+          showStep(nextStep);
+          return;
+        }
+
+        /* Final submit */
+        if (!canProceed()) return;
+
+        var data = getFormData();
+        btnNext.disabled = true;
+        btnNext.innerHTML = '<span class="spinner"></span> Submitting...';
+        formError.style.display = 'none';
+
+        /* Fire and forget to n8n webhook (no-cors) */
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).catch(function() {});
+
+        /* POST to Supabase */
+        fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(data)
+        }).then(function(response) {
+          if (!response.ok) {
+            throw new Error('Supabase error');
+          }
+
+          /* Push dataLayer event */
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'form_submission',
+              form_name: 'lead_application',
+              form_data: data
+            });
+          }
+
+          /* Show success */
+          formContainer.style.display = 'none';
+          formSuccess.style.display = 'block';
+          var applySection = document.getElementById('apply');
+          if (applySection) {
+            applySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }).catch(function() {
+          /* Still show success even if Supabase fails (webhook already sent) */
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'form_submission',
+              form_name: 'lead_application',
+              form_data: data
+            });
+          }
+
+          formContainer.style.display = 'none';
+          formSuccess.style.display = 'block';
+          var applySection = document.getElementById('apply');
+          if (applySection) {
+            applySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      /* Initial UI update */
+      updateUI();
+
+      /* ===== FAQ Accordion ===== */
+      var faqButtons = document.querySelectorAll('.faq-button');
+      var currentOpen = null;
+
+      for (var i = 0; i < faqButtons.length; i++) {
+        faqButtons[i].addEventListener('click', (function(index) {
+          return function() {
+            var answer = this.nextElementSibling;
+            var chevron = this.querySelector('.faq-chevron');
+            var isOpen = answer.classList.contains('open');
+
+            /* Close all */
+            var allAnswers = document.querySelectorAll('.faq-answer');
+            var allChevrons = document.querySelectorAll('.faq-chevron');
+            for (var j = 0; j < allAnswers.length; j++) {
+              allAnswers[j].classList.remove('open');
+              allChevrons[j].classList.remove('open');
+              faqButtons[j].setAttribute('aria-expanded', 'false');
+            }
+
+            /* Toggle current */
+            if (!isOpen) {
+              answer.classList.add('open');
+              chevron.classList.add('open');
+              this.setAttribute('aria-expanded', 'true');
+            }
+          };
+        })(i));
+      }
+    })();
+  </script>
+</body>
 </html>

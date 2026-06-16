@@ -1294,10 +1294,9 @@
         btnNext.innerHTML = '<span class="spinner"></span> Submitting...';
         formError.style.display = 'none';
 
-        /* Fire and forget to n8n webhook (no-cors) */
+        /* POST to n8n webhook (proper JSON so each field is parsed) */
         fetch(WEBHOOK_URL, {
           method: 'POST',
-          mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         }).catch(function() {});

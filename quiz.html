@@ -587,22 +587,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       q6_monthly_ad_spend: answers.q6_monthly_ad_spend || ''
     };
 
-    // 1. Fire-and-forget to n8n webhook
-    try {
-      fetch('https://n8n.srv1126577.hstgr.cloud/webhook/7cfa0f75-8955-4520-a6cb-db1d1013f556', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-    } catch (e) {
-      // fire-and-forget, ignore errors
-    }
+    // 1. POST to n8n webhook (proper JSON so each field is parsed individually)
+    var webhookDone = fetch('https://n8n.srv1126577.hstgr.cloud/webhook/7cfa0f75-8955-4520-a6cb-db1d1013f556', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
 
     // 2. POST to Supabase
     var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2pmYWlmZm9mc3ptdnl6cXdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk2OTA2MTMsImV4cCI6MjA2NTI2NjYxM30.3Ia8QrtjFzF-IcjWVFSKVL7kcLH_hUf4TqZ7v4rkVZE';
 
-    fetch('https://bkgjfaiffofszmvyzqwp.supabase.co/rest/v1/quiz_leads', {
+    var supabaseDone = fetch('https://bkgjfaiffofszmvyzqwp.supabase.co/rest/v1/quiz_leads', {
       method: 'POST',
       headers: {
         'apikey': supabaseKey,
@@ -611,21 +606,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify(payload)
-    })
-    .then(function(res) {
-      if (!res.ok) throw new Error('Supabase error: ' + res.status);
+    }).catch(function() {});
 
-      // 3. DataLayer: quiz completed
-      window.dataLayer.push({
-        event: 'quiz_completed',
-        submission_data: payload
-      });
-
-      // 4. Redirect
-      window.location.href = 'thank-you-fb.html';
-    })
-    .catch(function(err) {
-      // Still try to redirect on Supabase failure since n8n was fire-and-forget
+    // 3. Wait for both, then redirect regardless of outcome
+    Promise.all([webhookDone, supabaseDone]).finally(function() {
       window.dataLayer.push({
         event: 'quiz_completed',
         submission_data: payload
